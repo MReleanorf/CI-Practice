@@ -1,4 +1,80 @@
-body{
-    background-color: peachpuff;
-    
+/* styles.css */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+:root {
+  --bg1: #834956;      /* deep navy */
+  --bg2: #111827;      /* near-black */
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.14);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+
+  /* background vibe */
+  background:
+    radial-gradient(900px 500px at 15% 10%, rgba(56, 189, 248, 0.25), transparent 60%),
+    radial-gradient(700px 420px at 85% 20%, rgba(168, 85, 247, 0.25), transparent 60%),
+    linear-gradient(160deg, var(--bg1), var(--bg2));
+
+  display: grid;
+  place-items: center;
+  padding: 48px 18px;
+}
+
+h1, h2 {
+  margin: 0;
+  text-align: center;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+}
+
+h2 {
+  margin-top: 12px;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* Make the image look like a premium card */
+img {
+  margin-top: 28px;
+  width: min(560px, 92vw);
+  height: auto;
+  display: block;
+
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  box-shadow: var(--shadow);
+
+  transform: translateY(0) scale(1);
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+  filter: saturate(1.05) contrast(1.03);
+}
+
+img:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.55);
+}
+
+/* Optional: smooth selections */
+::selection {
+  background: rgba(56, 189, 248, 0.35);
 }
